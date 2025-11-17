@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Review Meeting for RCCE 2025 (Somali/English)</title>
+    
+    <!-- 1. Load Tailwind CSS (for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Load Google Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- 3. Load Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-navy: #0b2c67;
+            --brand-blue: #1d7cbf;
+            --brand-azure: #4db7e3;
+            --brand-slate: #0f172a;
+            --brand-slate-mid: #142852;
+            --brand-sky: #f2f7fb;
+            --brand-light: #e3eef9;
+            --brand-ivory: #fdf8ef;
+            --brand-gold: #d9a441;
+            --brand-sand: #fdf3df;
+            --brand-gradient: linear-gradient(135deg, var(--brand-blue), var(--brand-azure), var(--brand-gold));
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--brand-sky);
+            color: var(--brand-slate);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle at 10% 20%, rgba(77, 183, 227, 0.08), transparent 35%), radial-gradient(circle at 80% 10%, rgba(217, 164, 65, 0.06), transparent 40%), radial-gradient(circle at 40% 80%, rgba(29, 124, 191, 0.07), transparent 45%);
+            z-index: -1;
+        }
+
+        .brand-header {
+            background: linear-gradient(120deg, var(--brand-slate-mid), var(--brand-navy));
+            color: white;
+            border-bottom: 4px solid var(--brand-gold);
+            box-shadow: 0 30px 60px rgba(6, 35, 91, 0.18);
+        }
+
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            width: 104px;
+            height: 104px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.35));
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .brand-kicker {
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .brand-header .brand-title {
+            color: white;
+            font-size: clamp(1.25rem, 4vw, 1.9rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        .brand-nav a {
+            color: rgba(255, 255, 255, 0.75);
+            transition: all 0.25s ease;
+        }
+
+        .brand-nav a:hover,
+        .brand-nav a:focus {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 57, 107, 0.08);
+            box-shadow: 0 18px 40px rgba(8, 34, 75, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 28px 50px rgba(8, 34, 75, 0.12);
+        }
+
+        .hero-section {
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 55%), linear-gradient(130deg, var(--brand-slate-mid), var(--brand-blue));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 45%), radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.1), transparent 40%), radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08), transparent 45%);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('public/FMoH Logo.png');
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 300px;
+            opacity: 0.04;
+            filter: grayscale(100%);
+            pointer-events: none;
+        }
+
+        .hero-section > div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-highlights {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .hero-highlight {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            padding: 1rem 1.25rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-highlight p {
+            margin: 0;
+        }
+
+        .hero-highlight .label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-highlight .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .hero-highlight .detail {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .section-panel {
+            position: relative;
+        }
+
+        .section-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 15% 15%, rgba(77, 183, 227, 0.08), transparent 35%);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .section-panel > .max-w-7xl {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-panel--ivory {
+            background-color: var(--brand-ivory);
+        }
+
+        .section-panel--slate {
+            background: linear-gradient(135deg, rgba(11, 44, 103, 0.97), rgba(28, 40, 83, 0.95));
+            color: #f3f6ff;
+        }
+
+        .section-panel--slate::before {
+            opacity: 0.25;
+            background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 40%);
+        }
+
+        .section-panel--slate .content-card {
+            background-color: #ffffff;
+            color: var(--brand-slate);
+            box-shadow: 0 25px 45px rgba(4, 15, 38, 0.25);
+        }
+
+        .section-panel--slate .content-card h3,
+        .section-panel--slate .content-card p,
+        .section-panel--slate .content-card td,
+        .section-panel--slate .content-card th,
+        .section-panel--slate .content-card span {
+            color: var(--brand-slate);
+        }
+
+        .section-panel--slate .content-card .break-row td {
+            color: var(--brand-navy);
+        }
+
+        .primary-btn {
+            background-image: linear-gradient(120deg, #ffffff, #f2f7fb);
+            color: var(--brand-navy);
+            border-radius: 9999px;
+            font-weight: 700;
+            padding: 0.9rem 2.7rem;
+            border: none;
+            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 28px 46px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-btn {
+            border: none;
+            color: white;
+            border-radius: 9999px;
+            font-weight: 600;
+            padding: 0.9rem 2.7rem;
+            background-image: var(--brand-gradient);
+            box-shadow: 0 24px 40px rgba(77, 183, 227, 0.3);
+        }
+
+        .brand-outline {
+            border: 2px solid var(--brand-blue);
+            color: var(--brand-blue);
+        }
+
+        .brand-outline:hover {
+            background-color: var(--brand-light);
+        }
+
+        .brand-solid {
+            background-image: var(--brand-gradient);
+            color: #ffffff;
+            border: none;
+        }
+
+        .brand-solid:hover {
+            opacity: 0.95;
+            color: #ffffff;
+        }
+
+        .accent-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+        }
+
+        .section-heading {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--brand-navy);
+        }
+
+        .section-heading::before {
+            content: "";
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-gold), var(--brand-blue));
+            border-radius: 999px;
+        }
+
+        /* Agenda Table Styling */
+        .agenda-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .agenda-table th,
+        .agenda-table td {
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        .agenda-table th {
+            background-color: var(--brand-ivory);
+            color: var(--brand-navy);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 0.85rem;
+        }
+
+        .agenda-table tbody tr:nth-child(even) {
+            background-color: rgba(237, 244, 252, 0.7);
+        }
+
+        .agenda-table tbody tr:hover {
+            background-color: rgba(210, 230, 250, 0.6);
+        }
+
+        .break-row {
+            background-color: var(--brand-sand);
+            font-weight: 700;
+            color: var(--brand-navy);
+        }
+
+        .break-row:hover {
+            background-color: var(--brand-sand) !important;
+        }
+
+        .documents-grid a {
+            border: 1px solid rgba(13, 57, 107, 0.08);
+        }
+
+        .documents-grid a:hover {
+            border-color: var(--brand-blue);
+            box-shadow: 0 14px 30px rgba(13, 57, 107, 0.18);
+        }
+
+        .partners-grid > div {
+            border: 1px solid rgba(13, 57, 107, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+            background-color: white;
+        }
+
+        /* Mobile adjustment for table */
+        @media screen and (max-width: 640px) {
+            .agenda-table thead { display: none; } 
+            .agenda-table tr {
+                display: block;
+                margin-bottom: 1rem;
+                border: 1px solid rgba(13, 57, 107, 0.12);
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            .agenda-table td {
+                display: block;
+                text-align: right;
+                font-size: 0.9rem;
+                border-bottom: 1px dotted rgba(13, 57, 107, 0.15);
+            }
+            .agenda-table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: var(--brand-navy);
+            }
+            .break-row td::before { content: ""; }
+            .break-row td { text-align: center; }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- === HEADER & NAVIGATION (Brand-aligned) === -->
+    <header class="w-full brand-header sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            
+            <!-- Site Title with Official Logo -->
+            <a href="#" onclick="scrollToSection('home', event)" class="brand-identity group">
+                <div class="brand-logo">
+                    <img src="public/FMoH Logo.png" alt="Ministry of Health &amp; Human Services Logo">
+                </div>
+                <div>
+                    <p class="brand-kicker mb-2 tracking-[0.35em]">Federal Government of Somalia</p>
+                    <h1 class="brand-title leading-tight group-hover:text-white">
+                        RCCE Annual Review Meeting 2025
+                    </h1>
+                </div>
+            </a>
+            
+            <!-- Navigation Links -->
+            <nav class="brand-nav flex flex-wrap justify-center lg:justify-end gap-2 text-xs sm:text-sm font-semibold pt-2 lg:pt-0 border-t lg:border-t-0 border-white/10 uppercase tracking-wide">
+                <a href="#" onclick="scrollToSection('welcome', event)" class="transition duration-150 py-2 px-3 rounded-full border border-transparent hover:border-white/40 hover:bg-white/10">Welcome</a>
+                <a href="#" onclick="scrollToSection('agenda', event)" class="transition duration-150 py-2 px-3 rounded-full border border-transparent hover:border-white/40 hover:bg-white/10">Agenda</a>
+                <a href="#" onclick="scrollToSection('presentations', event)" class="transition duration-150 py-2 px-3 rounded-full border border-transparent hover:border-white/40 hover:bg-white/10">Documents</a>
+                <a href="#" onclick="scrollToSection('feedback', event)" class="transition duration-150 py-2 px-3 rounded-full border border-transparent hover:border-white/40 hover:bg-white/10">Feedback</a>
+            </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- === HERO/BANNER SECTION (Updated for visibility and polished title) === -->
+        <section id="home" class="hero-section w-full py-20 sm:py-32 text-center">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <span class="accent-pill mb-5">Two-Day Strategic Review • Nov 19–20, 2025</span>
+                <h1 class="text-4xl sm:text-6xl font-black leading-tight mb-4 tracking-tight drop-shadow-lg">
+                    Annual Review Meeting on Risk Communication and Community Engagement (RCCE)
+                </h1>
+                <p class="text-xl font-semibold text-white/85 mb-4 italic drop-shadow-md">
+                    Shirka Sanadlaha ee Dib u Eegista iyo Qiimeynta Barnaamijka Wacyigelinta iyo Ka Qaybqaadashada Bulshada
+                </p>
+                <p class="text-xl font-medium text-white/80 mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
+                    <span><i class="fas fa-map-marker-alt mr-2 text-brand-gold"></i>Palms Hotel, AAIA Airport, Mogadishu</span>
+                    <span class="hidden sm:inline text-white/60">•</span>
+                    <span><i class="fas fa-calendar mr-2 text-brand-gold"></i>19–20 November 2025</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" onclick="scrollToSection('agenda', event)" class="primary-btn inline-flex items-center justify-center text-base">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        View Detailed Agenda
+                    </a>
+                    <a href="#" onclick="scrollToSection('presentations', event)" class="secondary-btn inline-flex items-center justify-center text-base">
+                        <i class="fas fa-download mr-2"></i>
+                        Access Meeting Pack
+                    </a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="hero-highlight">
+                        <p class="label">Duration</p>
+                        <p class="value">2 Days</p>
+                        <p class="detail">Strategic review & planning</p>
+                    </div>
+                    <div class="hero-highlight">
+                        <p class="label">Participants</p>
+                        <p class="value">120+</p>
+                        <p class="detail">Federal & state RCCE leads</p>
+                    </div>
+                    <div class="hero-highlight">
+                        <p class="label">Focus</p>
+                        <p class="value">RCCE 2025</p>
+                        <p class="detail">Evidence, MEL & community insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === 1. WELCOME / OBJECTIVES SECTION (Updated Accent Colors) === -->
+        <section id="welcome" class="section-panel section-panel--ivory py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="content-card p-6 sm:p-10">
+                    <h2 class="text-3xl font-bold mb-6 border-b pb-3" style="color: var(--brand-navy); border-color: var(--brand-light);">Welcome &amp; Core Objectives</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Welcome to the Annual Review Meeting for Risk Communications and Community Engagement (RCCE). This meeting aims to review progress, share lessons learned, plan future strategies, and strengthen partnerships for effective RCCE across Somalia.
+                    </p>
+                    
+                    <!-- Objectives List -->
+                    <div class="grid md:grid-cols-3 gap-6 text-center mt-8">
+                        <div class="p-5 rounded-xl border" style="background-color: var(--brand-light); border-color: rgba(13,57,107,0.12);">
+                            <i class="fas fa-chart-line text-3xl mb-3" style="color: var(--brand-blue);"></i>
+                            <p class="font-semibold">Review Progress</p>
+                            <p class="text-sm text-gray-600">Assess achievements against 2024 targets.</p>
+                        </div>
+                        <div class="p-5 rounded-xl border" style="background-color: var(--brand-light); border-color: rgba(13,57,107,0.12);">
+                            <i class="fas fa-lightbulb text-3xl mb-3" style="color: var(--brand-blue);"></i>
+                            <p class="font-semibold">Share Learning</p>
+                            <p class="text-sm text-gray-600">Dissect challenges and best practices.</p>
+                        </div>
+                        <div class="p-5 rounded-xl border" style="background-color: var(--brand-light); border-color: rgba(13,57,107,0.12);">
+                            <i class="fas fa-handshake text-3xl mb-3" style="color: var(--brand-blue);"></i>
+                            <p class="font-semibold">Strengthen Partnerships</p>
+                            <p class="text-sm text-gray-600">Align partner roles for a cohesive 2026 strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === 2. AGENDA SECTION (Updated Accent Colors) === -->
+        <section id="agenda" class="section-panel section-panel--slate py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold mb-4" style="color: #ffffff;">Detailed Meeting Agenda</h2>
+                    <p class="text-lg text-white/80">Two days of focused review, reflection, and strategic planning.</p>
+                </div>
+
+                <div class="content-card overflow-hidden">
+                    
+                    <!-- Day 1 Table -->
+                    <div class="p-4 sm:p-8">
+                        <h3 class="text-2xl font-bold mb-4 border-b pb-2" style="color: var(--brand-navy); border-color: var(--brand-light);">Day 1 – Review, Reflection, and Learning (Nov 19)</h3>
+                        <div class="overflow-x-auto">
+                            <table class="agenda-table min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Session</th>
+                                        <th>Objective</th>
+                                        <th class="hidden md:table-cell">Facilitator/Lead</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="break-row">
+                                        <td colspan="4" class="text-center font-bold" data-label="Time & Session">08:30 – 09:00 | Arrival and Registration</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">09:00 – 09:30</td>
+                                        <td data-label="Session">Opening Session: Welcome Remarks</td>
+                                        <td data-label="Objective">Set tone, outline goals</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Senior leadership FMOH/UNICEF</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">09:30 – 10:15</td>
+                                        <td data-label="Session">Overview of RCCE Implementation</td>
+                                        <td data-label="Objective">Review achievements</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Khadar FMOH / Byron UNICEF</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">10:15 – 10:45</td>
+                                        <td data-label="Session">Emergency Context Update</td>
+                                        <td data-label="Objective">Update on emerging risks</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">All FMS/FMOH</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td colspan="4" class="text-center font-bold" data-label="Time & Session">10:45 – 11:00 | Tea Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">11:00 – 12:30</td>
+                                        <td data-label="Session">Panel Discussion: What Worked / Didn’t</td>
+                                        <td data-label="Objective">Share lessons & best practices</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Panelists (FMOH, UN, NGOs)</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td colspan="4" class="text-center font-bold" data-label="Time & Session">12:30 – 13:30 | Lunch Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">13:30 – 16:45</td>
+                                        <td data-label="Session">Group Work, Report Back & Reflection</td>
+                                        <td data-label="Objective">Identify gaps & consolidate lessons</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">IOM, UNICEF, FMOH, UKHSA</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2 Table -->
+                    <div class="p-4 sm:p-8 pt-8">
+                        <h3 class="text-2xl font-bold mb-4 border-b pb-2" style="color: var(--brand-navy); border-color: var(--brand-light);">Day 2 – Strategy, Planning, and Way Forward (Nov 20)</h3>
+                        <div class="overflow-x-auto">
+                            <table class="agenda-table min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Session</th>
+                                        <th>Objective</th>
+                                        <th class="hidden md:table-cell">Facilitator/Lead</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Time">08:30 – 09:00</td>
+                                        <td data-label="Session">Recap of Day 1 & Agenda for Day 2</td>
+                                        <td data-label="Objective">Review outcomes & outline Day 2</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Meeting Facilitator</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">09:00 – 10:00</td>
+                                        <td data-label="Session">Presentation: MEL for RCCE</td>
+                                        <td data-label="Objective">Strengthen MEL approaches</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Abdirahman / SBC M&E Lead</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">10:00 – 10:30</td>
+                                        <td data-label="Session">Social & Community Listening</td>
+                                        <td data-label="Objective">Explore community insights</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">UNICEF Regional Office</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td colspan="4" class="text-center font-bold" data-label="Time & Session">10:30 – 11:00 | Tea Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">11:00 – 12:30</td>
+                                        <td data-label="Session">Group Work: Forward Planning</td>
+                                        <td data-label="Objective">Update RCCE plans, define priorities</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">FMOH & UNICEF</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td colspan="4" class="text-center font-bold" data-label="Time & Session">12:30 – 13:30 | Lunch Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">13:30 – 16:30</td>
+                                        <td data-label="Session">Report Back, Commitments & Evaluation</td>
+                                        <td data-label="Objective">Align roles & consolidate next steps</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">Plenary & Organizers</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Time">16:30 – 17:00</td>
+                                        <td data-label="Session">Closing Session: Remarks & Summary</td>
+                                        <td data-label="Objective">Summarize outcomes & close meeting</td>
+                                        <td data-label="Facilitator/Lead" class="hidden md:table-cell">FMOH / UNICEF & Partners</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center p-8 border-t border-gray-100">
+                        <a href="public/RCCE Annaul Review Meeting Agenda  19 to 20 Nove 2025 Pdf.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-lg brand-outline transition duration-300">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            Download Full Agenda PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === 3. DOCUMENTS & PRESENTATIONS SECTION (Updated Accent Colors) === -->
+        <section id="presentations" class="section-panel section-panel--ivory py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold mb-4" style="color: var(--brand-navy);">Key Documents &amp; Materials</h2>
+                    <p class="text-lg text-gray-600">Access all session slides, templates, and reference materials here.</p>
+                </div>
+
+                <div class="content-card p-6 sm:p-8">
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--brand-navy);">Quick Downloads</h3>
+                    
+                    <!-- File Card Grid -->
+                    <div class="documents-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="#" class="flex flex-col items-center p-4 content-card hover:shadow-lg transition duration-150 rounded-lg">
+                            <i class="fas fa-file-powerpoint text-4xl text-red-600 mb-2"></i>
+                            <span class="text-sm font-medium text-center text-gray-900">Day 1 Slides</span>
+                            <span class="text-xs text-gray-500">2.5 MB</span>
+                        </a>
+                        <a href="#" class="flex flex-col items-center p-4 content-card hover:shadow-lg transition duration-150 border border-gray-100 rounded-lg">
+                            <i class="fas fa-users-gear text-4xl text-blue-600 mb-2"></i>
+                            <span class="text-sm font-medium text-center text-gray-900">Breakout Templates</span>
+                            <span class="text-xs text-gray-500">Google Docs</span>
+                        </a>
+                        <a href="#" class="flex flex-col items-center p-4 content-card hover:shadow-lg transition duration-150 border border-gray-100 rounded-lg">
+                            <i class="fas fa-file-excel text-4xl text-green-600 mb-2"></i>
+                            <span class="text-sm font-medium text-center text-gray-900">M&E Data Set</span>
+                            <span class="text-xs text-gray-500">1.1 MB</span>
+                        </a>
+                        <a href="#" class="flex flex-col items-center p-4 content-card hover:shadow-lg transition duration-150 border border-gray-100 rounded-lg">
+                            <i class="fas fa-book-open text-4xl text-blue-600 mb-2"></i>
+                            <span class="text-sm font-medium text-center text-gray-900">Pre-Reading Pack</span>
+                            <span class="text-xs text-gray-500">PDF, 15 pages</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === 5. EVALUATION & FEEDBACK SECTION === -->
+        <section id="feedback" class="section-panel section-panel--ivory py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold mb-4" style="color: var(--brand-navy);">Evaluation &amp; Feedback</h2>
+                    <p class="text-lg text-gray-600">Access the official meeting evaluation forms using the links below.</p>
+                </div>
+
+                <div class="content-card p-6 sm:p-8 text-center border-t-4" style="border-color: var(--brand-gold);">
+                    <p class="text-xl font-medium mb-6 text-gray-800">
+                        Please complete the following form(s) to submit your comprehensive feedback and evaluation of the meeting.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                         <a href="#" class="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg shadow-lg brand-solid transition duration-300 transform hover:scale-[1.01]">
+                            <i class="fas fa-file-signature mr-2"></i>
+                            Access Online Evaluation Form
+                        </a>
+                         <a href="#" class="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg shadow-lg brand-outline transition duration-300 transform hover:scale-[1.01]">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Offline Form (.docx)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- === 6. CONTACT / HELP SECTION (Updated Color) === -->
+        <section id="contact" class="section-slate text-white">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl mb-4">
+                    Need Urgent Assistance?
+                </h2>
+                <p class="text-xl text-blue-200 mb-6">
+                    Contact the dedicated logistics team for support during the meeting.
+                </p>
+                <a href="mailto:rcce-meeting-2025@fmo.gov.so" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg bg-white hover:bg-gray-100 transition duration-300 shadow-xl" style="color: var(--brand-navy);">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Email the Team
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    
+    <!-- === FOOTER === -->
+    <footer class="text-white" style="background-color: var(--brand-navy);">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-400">&copy; 2025 FMOH, UNICEF, and Partners. All rights reserved. Powered by RCCE Logistics Team.</p>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for smooth scrolling -->
+    <script>
+        /**
+         * Custom JavaScript function to scroll to a section without changing the URL fragment.
+         */
+        window.scrollToSection = function(id, event) {
+            if (event) {
+                event.preventDefault();
+            }
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
