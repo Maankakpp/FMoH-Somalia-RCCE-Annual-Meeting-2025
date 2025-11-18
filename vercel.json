@@ -1,5 +1,16 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "routes": [
+    {
+      "src": "/custom-styles.css",
+      "dest": "/custom-styles.css"
+    },
+    {
+      "src": "/print.css",
+      "dest": "/print.css"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
   ]
 }
