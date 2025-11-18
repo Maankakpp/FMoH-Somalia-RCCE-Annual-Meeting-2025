@@ -1,0 +1,509 @@
+/*
+|--------------------------------------------------------------------------
+| CUSTOM STYLES FOR RCCE ANNUAL REVIEW MEETING WEBSITE
+|--------------------------------------------------------------------------
+| This file defines all custom branding, layout, and component styling.
+*/
+
+/* --- 1. BRAND COLORS & TYPOGRAPHY --- */
+:root {
+    --brand-navy: #172554;      /* Deep Navy Blue (Primary Background) */
+    --brand-blue: #3b82f6;      /* Primary Action Blue */
+    --brand-light: #e0e7ff;     /* Light Blue/Lavender (Objective boxes/Highlights) */
+    --brand-gold: #f59e0b;      /* Gold/Amber Accent */
+    --brand-ivory: #f7f6f4;     /* Light Off-White (Section Backgrounds) */
+    --text-navy: #1f2937;       /* Dark Text Color for general body copy (READABILITY FIX) */
+    --break-bg: #fffbeb;        /* Light yellow for break rows */
+    --break-text: #92400e;      /* Dark text for break rows */
+}
+
+/* Add smooth scrolling to the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global Reset/Defaults */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-navy);
+    margin: 0; 
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- 2. HEADER & HERO SECTION STYLING --- */
+
+.brand-header {
+    background-color: var(--brand-navy);
+    color: white;
+    padding: 1rem 0; /* Reduced padding for a sleeker look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+    position: sticky; /* Makes the header stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures header is on top of other content */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    transition: padding 0.3s ease; /* Smooth transition for potential scroll effects */
+}
+
+/* Scrolled state for the header */
+.brand-header.scrolled {
+    padding: 0.5rem 0; /* Reduce vertical padding */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on scroll */
+}
+
+.brand-header.scrolled .brand-logo img {
+    transform: scale(0.85); /* Shrink the logo slightly */
+}
+
+/* Logo Styling (add class="brand-logo" to your <img> tag) */
+.brand-logo {
+    max-height: 50px; /* Adjust this value to fit your logo's dimensions */
+    height: auto;
+    width: auto;
+    transition: transform 0.3s ease;
+    background-color: transparent; /* Ensures no background color is applied */
+    border: none; /* Removes any potential borders */
+}
+
+.brand-logo img {
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.brand-logo:hover {
+    transform: scale(1.05); /* Slightly enlarges the logo on hover */
+}
+
+/* Active state for navigation links */
+.brand-nav a.active-nav-link {
+    color: var(--brand-gold);
+    border-bottom: 2px solid var(--brand-gold);
+    padding-bottom: 0.25rem;
+}
+
+/* Kicker text above main brand title */
+.brand-kicker {
+    font-size: 0.75rem; /* 12px */
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-section {
+    background-color: var(--brand-navy);
+    color: white;
+    padding-top: 4rem; /* Adjusted padding */
+    padding-bottom: 4rem; /* Adjusted padding */
+}
+
+/* Accent Pill (for consistent section headings) */
+.accent-pill {
+    background-color: var(--brand-gold); /* Use brand's gold for uniqueness */
+    color: var(--brand-navy); /* Dark text for high contrast */
+    padding: 0.5rem 1.25rem; /* Slightly larger padding */
+    border-radius: 9999px; 
+    font-size: 0.875rem; 
+    font-weight: 600; /* Bolder text */
+    display: inline-block; 
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2); /* Softer, colored glow */
+}
+
+/* Highlight Cards (Duration, Participants, Focus) */
+.hero-highlight {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    padding: 1rem 1.25rem;
+    color: white; 
+    border-top-width: 4px; /* Create space for the colored top border */
+    backdrop-filter: blur(5px); /* Adds a frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+    transition: all 0.3s ease; /* Transition all properties smoothly */
+}
+
+.highlight-blue { border-top-color: var(--brand-blue); }
+.highlight-gold { border-top-color: var(--brand-gold); }
+
+.hero-highlight:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px); /* Lifts the card on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.highlight-blue:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3); /* Blue glow */
+}
+.highlight-gold:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(245, 158, 11, 0.3); /* Gold glow */
+}
+
+.hero-highlight .value {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.hero-highlight .detail {
+    color: rgba(255, 255, 255, 0.85); /* Softer white for subtlety */
+    font-size: 0.9rem; /* Slightly smaller for hierarchy */
+}
+
+/* --- 3. SECTION & CARD LAYOUT --- */
+
+.section-panel {
+    margin-top: 50px; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section-panel--ivory {
+    background-color: var(--brand-ivory);
+}
+
+.section-panel--slate {
+    background-color: var(--brand-navy);
+    color: #f3f6ff;
+}
+
+/* Content Card (The Floating White Boxes) */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    padding: 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Adds a subtle, defining border */
+    color: var(--text-navy);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* AGENDA READABILITY FIX: Ensures dark text within the agenda card */
+.agenda-card {
+    background-color: #ffffff; /* Changed to white for consistency with other cards */
+    color: var(--text-navy); /* Dark text for readability */
+    padding: 0; 
+}
+
+/* Organizer Card Specific styles */
+.organizer-card {
+    transition: transform 0.3s ease;
+}
+.organizer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.organizer-card .organizer-img {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+}
+
+/* --- 4. AGENDA TABLE STYLING --- */
+.agenda-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.agenda-table th, .agenda-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0; 
+    color: var(--text-navy); /* Ensure dark text for readability */
+}
+
+.agenda-table th {
+    background-color: #f1f5f9; 
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #4b5563;
+}
+
+/* Styling for Break/Lunch rows */
+.agenda-table .break-row td {
+    background-color: var(--break-bg); 
+    font-weight: 700;
+    color: var(--break-text);
+    border-bottom: 2px solid #fde68a;
+}
+
+/* --- 5. BUTTON STYLING (with professional hovers) --- */
+
+/* Primary Button (White/Light for Hero) */
+.primary-btn {
+    background-color: #ffffff;
+    color: var(--brand-navy);
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; 
+}
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Secondary Button (Navy Outline for Hero and Footer) */
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease; 
+}
+.secondary-btn:hover {
+    background-color: white;
+    color: var(--brand-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* White glow effect */
+}
+
+/* Solid Button (Gradient for Evaluation) */
+.brand-solid {
+    background-image: linear-gradient(135deg, var(--brand-blue), var(--brand-gold));
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease; 
+}
+.brand-solid:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); /* Blue glow effect */
+}
+
+/* Outline Button (Agenda PDF) */
+.brand-outline {
+    border: 2px solid var(--brand-navy);
+    color: var(--brand-navy);
+    background-color: transparent;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+
+.brand-outline:hover {
+    background-color: var(--brand-navy); 
+    color: white; 
+    box-shadow: 0 0 20px rgba(23, 37, 84, 0.4); /* Navy glow effect */
+    transform: translateY(-2px);
+}
+
+/* --- 6. GALLERY SLIDESHOW STYLING --- */
+.gallery-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for a cleaner look */
+.gallery-grid::-webkit-scrollbar { display: none; }
+.gallery-grid { -ms-overflow-style: none; scrollbar-width: none; }
+
+.gallery-item {
+    flex: 0 0 100%; /* Each item takes full width of the container */
+    scroll-snap-align: center; /* Center the item on snap */
+    display: block;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 16 / 10;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f0f0f0;
+}
+
+/* Arrow Styling */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(23, 37, 84, 0.7); /* Semi-transparent navy */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.gallery-arrow:hover {
+    background-color: var(--brand-navy);
+}
+
+.left-arrow { left: -15px; }
+.right-arrow { right: -15px; }
+
+/* --- PRELOADER STYLING --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.75s ease, visibility 0.75s ease;
+}
+
+#preloader.preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: var(--brand-gold); /* Accent color for spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* --- 7. RESPONSIVE AGENDA TABLE --- */
+@media screen and (max-width: 768px) {
+    .agenda-table thead {
+        display: none; /* Hide the table header on mobile */
+    }
+
+    .agenda-table tr {
+        display: block; /* Each row becomes a block-level element */
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: #fff; /* Give each "card" a white background */
+    }
+
+    .agenda-table td {
+        display: block; /* Stack cells vertically */
+        text-align: right; /* Align cell content to the right */
+        padding-left: 50%; /* Make space for the label */
+        position: relative;
+        border-bottom: 1px dotted #e2e8f0; /* Separator between cells */
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .agenda-table td:last-child {
+        border-bottom: none; /* Remove border from the last cell in a card */
+    }
+
+    .agenda-table td::before {
+        content: attr(data-label); /* Use the data-label as content */
+        position: absolute;
+        left: 1rem;
+        text-align: left;
+        font-weight: 600;
+        color: var(--brand-navy);
+    }
+}
+
+/* --- 8. LIGHTBOX STYLING --- */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* On top of everything */
+    padding: 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    cursor: default;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #ccc;
+}
+
+/* --- 9. UTILITIES (Back to Top Button) --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--brand-navy);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--brand-blue);
+}

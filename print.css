@@ -1,0 +1,66 @@
+/*
+|--------------------------------------------------------------------------
+| PRINT STYLES FOR RCCE ANNUAL REVIEW MEETING WEBSITE
+|--------------------------------------------------------------------------
+| This file defines styles specifically for printing the agenda.
+| It hides non-essential elements and optimizes the agenda table.
+*/
+
+/* Hide elements not needed for print */
+body > *:not(#agenda) {
+    display: none !important;
+}
+
+/* Ensure the agenda section is visible and takes full width */
+#agenda {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fff !important; /* White background for print */
+    color: #000 !important; /* Black text for readability */
+}
+
+/* Reset text alignment and colors for print */
+#agenda h2, #agenda p {
+    text-align: left !important;
+    color: #000 !important;
+}
+
+/* Ensure agenda card and table are visible and styled for print */
+.agenda-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    background-color: #fff !important;
+}
+
+.agenda-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.agenda-table th, .agenda-table td {
+    border: 1px solid #ccc !important;
+    padding: 8px !important;
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+/* Ensure break rows are still distinguishable but print-friendly */
+.agenda-table .break-row td {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+/* Hide the buttons within the agenda section for print */
+.agenda-card .p-6.text-center {
+    display: none !important;
+}
+
+/* Hide the preloader if it somehow persists */
+#preloader {
+    display: none !important;
+}
