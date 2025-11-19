@@ -64,6 +64,24 @@
                 <a href="#gallery" class="hover:border-b-2 border-white/50 pb-1">Gallery</a>
                 <a href="#feedback" class="hover:border-b-2 border-white/50 pb-1">Feedback</a>
             </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i id="mobile-menu-open-icon" class="fas fa-bars text-2xl"></i>
+                    <i id="mobile-menu-close-icon" class="fas fa-times text-2xl hidden"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 py-4 mobile-nav-links">
+                <a href="#welcome">Welcome</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#documents">Documents</a>
+                <a href="#organizers">Organizers</a> 
+                <a href="#gallery">Gallery</a>
+                <a href="#feedback">Feedback</a>
+            </nav>
         </div>
     </header>
 
@@ -225,10 +243,10 @@
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 documents-grid">
                 
-                <a href="#" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <a href="https://docs.google.com/presentation/d/1E_ciHVAwbzRdvtj3yU3LMv-dY6bKmkmr/edit?usp=sharing&ouid=115321174409306209150&rtpof=true&sd=true" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                     <span class="text-3xl text-red-600"><i class="fas fa-file-powerpoint"></i></span>
                     <p class="font-semibold mt-2 text-sm text-brand-navy">Day 1 Slides</p>
-                    <p class="text-xs text-gray-500">2.5 MB</p>
+                    <p class="text-xs text-gray-500">Google Slides</p>
                 </a>
 
                 <a href="#" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
@@ -259,6 +277,30 @@
                     <span class="text-3xl text-blue-600"><i class="fas fa-file-pdf"></i></span>
                     <p class="font-semibold mt-2 text-sm text-brand-navy">Final Report</p>
                     <p class="text-xs text-gray-500">Coming soon</p>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1-NHdxQHEWqc5NHARUZ00DTerBtWgblyt/view?usp=sharing" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
+                    <span class="text-3xl text-blue-600"><i class="fas fa-file-pdf"></i></span>
+                    <p class="font-semibold mt-2 text-sm text-brand-navy">Breif on RCCE Somalia</p>
+                    <p class="text-xs text-gray-500">Google Drive</p>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1dk3phC-3mPQC5yqJwe8MVDyVBhn-hFc9/view?usp=sharing" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
+                    <span class="text-3xl text-blue-600"><i class="fas fa-file-pdf"></i></span>
+                    <p class="font-semibold mt-2 text-sm text-brand-navy">Weekly Epi Bulletin (W45 2025)</p>
+                    <p class="text-xs text-gray-500">Google Drive</p>
+                </a>
+
+                <a href="https://docs.google.com/document/d/1CBUfALPxddFrtYX6OSTzzXuTvNaiY4aQ/edit?usp=sharing&ouid=115321174409306209150&rtpof=true&sd=true" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
+                    <span class="text-3xl text-blue-500"><i class="fas fa-file-word"></i></span>
+                    <p class="font-semibold mt-2 text-sm text-brand-navy">CN for annual RCCE Strategy</p>
+                    <p class="text-xs text-gray-500">Google Docs</p>
+                </a>
+
+                <a href="https://docs.google.com/document/d/1Kj8jgXic2D_ZJxL24KKsKL2Uy2D9NCaz/edit?usp=sharing&ouid=115321174409306209150&rtpof=true&sd=true" class="content-card flex flex-col items-center text-center py-6 px-3 hover:shadow-xl transition duration-300 transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
+                    <span class="text-3xl text-blue-500"><i class="fas fa-file-word"></i></span>
+                    <p class="font-semibold mt-2 text-sm text-brand-navy">Concept Note</p>
+                    <p class="text-xs text-gray-500">Google Docs</p>
                 </a>
             </div>
         </div>
@@ -373,6 +415,28 @@
 
             // --- Shrink Header on Scroll ---
             const header = document.querySelector('.brand-header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const openIcon = document.getElementById('mobile-menu-open-icon');
+            const closeIcon = document.getElementById('mobile-menu-close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                openIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+
+
             if (header) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 50) {

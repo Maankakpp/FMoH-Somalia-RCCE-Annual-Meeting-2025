@@ -47,6 +47,10 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
     transition: padding 0.3s ease; /* Smooth transition for potential scroll effects */
 }
+.brand-header {
+    /* Add relative positioning to act as an anchor for the absolute mobile menu */
+    position: sticky; 
+}
 
 /* Scrolled state for the header */
 .brand-header.scrolled {
@@ -81,6 +85,23 @@ a {
     color: var(--brand-gold);
     border-bottom: 2px solid var(--brand-gold);
     padding-bottom: 0.25rem;
+}
+
+/* --- Mobile Navigation --- */
+#mobile-menu {
+    background-color: var(--brand-navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-links a {
+    color: white;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.mobile-nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Kicker text above main brand title */
