@@ -379,8 +379,13 @@ a {
     background-color: var(--brand-navy);
 }
 
-.left-arrow { left: -15px; }
-.right-arrow { right: -15px; }
+.left-arrow { left: 10px; } /* Position for small screens */
+.right-arrow { right: 10px; } /* Position for small screens */
+
+@media (min-width: 640px) { /* sm breakpoint and up */
+    .left-arrow { left: -15px; } /* Original position for larger screens */
+    .right-arrow { right: -15px; } /* Original position for larger screens */
+}
 
 /* --- PRELOADER STYLING --- */
 #preloader {
