@@ -15,11 +15,11 @@ The website serves as a central hub for meeting attendees, providing access to t
 -   **Sticky Header & Scrollspy**: Smooth navigation that highlights the user's current section.
 -   **Print-Friendly**: The agenda can be easily printed for offline use.
 
-## Live Demo
+## Live 
 
-The website is hosted using GitHub Pages and can be viewed live at:
+The website is hosted using app.netlify.com and can be viewed live at:
 
-**[https://maankakpp.github.io/FMoH-Somalia-RCCE-Annual-Meeting-2025/](https://maankakpp.github.io/FMoH-Somalia-RCCE-Annual-Meeting-2025/)**
+**https://rcce.netlify.app/**
 
 ## Technologies Used
 
